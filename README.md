@@ -1,8 +1,5 @@
-# Vite + React + Zustand + Eslint Boilerplate
+# GDSC DJU Event Site
 
-<p align="center">
-  <img src="https://user-images.githubusercontent.com/61281239/177843432-fa16e0b3-cb3e-4fc5-808e-8becce751d12.png" />
-</p>
 
 
 
@@ -22,7 +19,6 @@ or
 > yarn dev && vite
 ```
 
-TODO의 추가, 삭제, 업데이트 같은 함수는 모두 구현이 되어있으나 수정기능의 경우 Component에 적용해두지 않았습니다.
 
 
 ## Stack
