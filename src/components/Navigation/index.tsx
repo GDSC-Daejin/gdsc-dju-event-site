@@ -12,7 +12,7 @@ import {
   StyledLogoWrapper,
 } from './styled';
 import gdsclogo from '../../assets/GDSCLogo.svg';
-import { useTheme } from '../../hooks/ThemeHandler';
+import { ThemeType, useTheme } from '../../hooks/ThemeHandler';
 
 export const ROUTES = [
   {
@@ -29,7 +29,7 @@ export const ROUTES = [
   },
 ];
 const Navigation: React.FC<{
-  theme: 'light' | 'dark';
+  theme: ThemeType | undefined;
   toggleTheme: () => void;
 }> = ({ theme, toggleTheme }) => {
   const location = useLocation();

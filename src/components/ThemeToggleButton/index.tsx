@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DarkModeIcon from '../../assets/icons/darkModeIcon';
 import LightModeIcon from '../../assets/icons/lightModeIcon';
-import { useTheme } from '../../hooks/ThemeHandler';
+import { ThemeType, useTheme } from '../../hooks/ThemeHandler';
 
 const ThemeButton = styled.button`
   padding: 7px;
@@ -14,7 +14,7 @@ const ThemeButton = styled.button`
 `;
 
 const ThemeToggleButton: React.FC<{
-  theme: 'light' | 'dark';
+  theme: ThemeType | undefined;
   toggleButton: () => void;
 }> = ({ theme, toggleButton }) => {
   return (

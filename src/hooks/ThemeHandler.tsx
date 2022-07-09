@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-type ThemeType = 'light' | 'dark';
+export type ThemeType = 'light' | 'dark';
 export const useTheme = () => {
   // 브라우저 테마 정보 확인
   useEffect(() => {
