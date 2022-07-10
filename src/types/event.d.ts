@@ -3,13 +3,13 @@ export type EventsType = 'event' | 'session';
 export interface EventType {
   title: string;
   description: string;
-  date: string;
-  time: string;
+  start: string;
+  end: string;
   applyLink: string;
-  googleCalender: string;
+  type: EventsType;
 }
 export interface SessionEventType extends EventType {
-  sessions: SessionType[];
+  sessions?: SessionType[];
 }
 export interface SessionType {
   title: string;
@@ -18,3 +18,4 @@ export interface SessionType {
   name: string;
   position: string;
 }
+export type EventsDataType = SessionEventType[];

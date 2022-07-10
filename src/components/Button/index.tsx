@@ -32,11 +32,12 @@ export const EventButton = styled.button<{ color?: keyof typeof lightColors }>`
       background: ${({ theme }) => theme.colors[color]};
     `}
 `;
-const CalendarButton: React.FC<{ children: React.ReactNode }> = ({
-  children,
-}) => {
+const CalendarButton: React.FC<{
+  children: React.ReactNode;
+  onClick: () => void;
+}> = ({ children, onClick }) => {
   return (
-    <CalendarButtonStyle>
+    <CalendarButtonStyle onClick={onClick}>
       <CalendarImage src={calendarIcon} />
       {children}
     </CalendarButtonStyle>

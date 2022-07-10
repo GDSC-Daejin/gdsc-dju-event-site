@@ -1,5 +1,9 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { userData } from '../../siteDatas/userData';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
+import { SessionEventType } from '../../types/event';
+import { google } from '../../utils/createGoogleCalendarLink';
+import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
 import CalendarButton, { EventButton } from '../Button';
 import { StyledSectionBar } from '../Event/styled';
 import SessionCard from '../SessionCard';
@@ -18,7 +22,14 @@ import {
   SessionHeader,
 } from './styled';
 
-const Session = () => {
+const Session: React.FC<SessionEventType> = ({
+  title,
+  description,
+  start,
+  end,
+  applyLink,
+  sessions,
+}) => {
   const [sectionWidth, setSectionWidth] = useState(0);
   const [scrollPosition, setScrollPosition] = useState({
     top: 0,
@@ -27,86 +38,95 @@ const Session = () => {
     y: 0,
   });
   const sectionRef = useRef<HTMLDivElement>(null);
-  const sessionSection = document.getElementById('sessionCardSection');
+  const sessionRef = useRef<HTMLDivElement>(null);
 
-  const mouseDownHandler = function (e: MouseEvent) {
-    if (sessionSection) {
-      sessionSection.style.cursor = 'grabbing';
-      sessionSection.style.userSelect = 'none';
+  const mouseDownHandler = function (e: React.MouseEvent<HTMLDivElement>) {
+    if (sessionRef.current) {
+      sessionRef.current.style.cursor = 'grabbing';
+      sessionRef.current.style.userSelect = 'none';
       setScrollPosition({
         // The current scroll
-        left: sessionSection.scrollLeft,
-        top: sessionSection.scrollTop,
+        left: sessionRef.current.scrollLeft,
+        top: sessionRef.current.scrollTop,
         // Get the current mouse position
         x: e.clientX,
         y: e.clientY,
       });
     }
-    document.addEventListener('mousemove', mouseMoveHandler);
-    document.addEventListener('mouseup', mouseUpHandler);
   };
-  const mouseMoveHandler = function (e: MouseEvent) {
+  const mouseMoveHandler = function (e: React.MouseEvent<HTMLDivElement>) {
     // How far the mouse has been moved
     const dx = e.clientX - scrollPosition.x;
     const dy = e.clientY - scrollPosition.y;
-    if (sessionSection) {
-      sessionSection.scrollTop = scrollPosition.top - dy;
-      sessionSection.scrollLeft = scrollPosition.left - dx;
+    if (sessionRef.current && sessionRef.current.style.cursor == 'grabbing') {
+      sessionRef.current.scrollTop = scrollPosition.top - dy;
+      sessionRef.current.scrollLeft = scrollPosition.left - dx;
     }
   };
   const mouseUpHandler = function () {
-    if (sessionSection) {
-      sessionSection.style.cursor = 'grab';
-      sessionSection.style.removeProperty('user-select');
+    if (sessionRef.current) {
+      sessionRef.current.style.cursor = 'grab';
+      sessionRef.current.style.removeProperty('user-select');
     }
-    document.removeEventListener('mousemove', mouseMoveHandler);
-    document.removeEventListener('mouseup', mouseUpHandler);
   };
 
   useEffect(() => {
     sectionRef.current && setSectionWidth(sectionRef.current?.offsetWidth);
   }, [sectionRef]);
-  useEffect(() => {
-    if (sessionSection) {
-      sessionSection.addEventListener('mousedown', mouseDownHandler);
-      sessionSection.style.cursor = 'grab';
-    }
-    return () => {
-      document.removeEventListener('mousemove', mouseMoveHandler);
-      document.removeEventListener('mouseup', mouseUpHandler);
-    };
-  }, [sessionSection]);
 
-  const arr = ['', '', '', '', ''];
   return (
     <EventSectionWrapper>
       <LayoutContainer>
         <ContainerInner ref={sectionRef}>
           <SessionHeader>
             <EventInfoWrapper>
-              <EventTitle>public Session #2</EventTitle>
-              <EventDescription>
-                모두가 참여할 수 있는 public Session
-              </EventDescription>
+              <EventTitle>{title}</EventTitle>
+              <EventDescription>{description}</EventDescription>
               <EventDateWrapper>
-                <EventDate>2022.05.18</EventDate>
+                <EventDate>{eventDateFilter(start, end)}</EventDate>
                 <StyledSectionBar />
-                <EventTime>8:00 PM - 10:00 PM</EventTime>
+                <EventTime>{eventTimeFilter(start, end)}</EventTime>
               </EventDateWrapper>
             </EventInfoWrapper>
             <EventApplyWrapper>
-              <EventButton>세션 신청하기</EventButton>
-              <CalendarButton>구글 캘린더에 추가하기</CalendarButton>
+              <EventButton onClick={() => window.open(applyLink, '_blank')}>
+                세션 신청하기
+              </EventButton>
+              <CalendarButton
+                onClick={() =>
+                  window.open(
+                    google({
+                      start: `${start} +09:00`,
+                      end: `${end} +09:00`,
+                      title: title,
+                      description: description,
+                      organizer: {
+                        name: 'GDSC DJU',
+                        email: 'gdscdju@gmail.com',
+                      },
+                    }),
+                    '_blank',
+                  )
+                }
+              >
+                구글 캘린더에 추가하기
+              </CalendarButton>
             </EventApplyWrapper>
           </SessionHeader>
         </ContainerInner>
       </LayoutContainer>
-      <SessionCardSection id={'sessionCardSection'}>
-        {arr.map((data, id) => (
-          <SessionCardWrapper key={id} sectionWidth={`${sectionWidth}px`}>
-            <SessionCard />
-          </SessionCardWrapper>
-        ))}
+      <SessionCardSection
+        ref={sessionRef}
+        onMouseDown={mouseDownHandler}
+        onMouseUp={mouseUpHandler}
+        onMouseMove={mouseMoveHandler}
+      >
+        {sessions &&
+          sessions.map((sessionData, id) => (
+            <SessionCardWrapper key={id} sectionWidth={`${sectionWidth}px`}>
+              <SessionCard {...sessionData} />
+            </SessionCardWrapper>
+          ))}
       </SessionCardSection>
     </EventSectionWrapper>
   );

@@ -1,4 +1,5 @@
 import React from 'react';
+import { SessionType } from '../../types/event';
 import {
   SessionCardWrapper,
   SessionTime,
@@ -10,25 +11,39 @@ import {
   SpeakerWrapper,
 } from './styled';
 
-const SessionCard = () => {
+const SessionCard: React.FC<SessionType> = ({
+  title,
+  name,
+  time,
+  position,
+  profileImage,
+}) => {
   return (
     <SessionCardWrapper>
       <div>
-        <SessionTitle>비전공자가 프론트?</SessionTitle>
-        <SessionTime>22:00 - 22:20</SessionTime>
+        <SessionTitle>{title}</SessionTitle>
+        <SessionTime>{time}</SessionTime>
       </div>
-      <SpeakerInfo />
+      <SpeakerInfo
+        name={name}
+        profileImage={profileImage}
+        position={position}
+      />
     </SessionCardWrapper>
   );
 };
 
-export const SpeakerInfo = () => {
+export const SpeakerInfo: React.FC<{
+  name: string;
+  position: string;
+  profileImage: string;
+}> = ({ name, position, profileImage }) => {
   return (
     <SpeakerWrapper>
-      <SpeakerImage />
+      <SpeakerImage src={profileImage} />
       <SpeakerInfoWrapper>
-        <SpeakerName>Jason</SpeakerName>
-        <SpeakerRole>Frontend Developer</SpeakerRole>
+        <SpeakerName>{name}</SpeakerName>
+        <SpeakerRole>{position}</SpeakerRole>
       </SpeakerInfoWrapper>
     </SpeakerWrapper>
   );

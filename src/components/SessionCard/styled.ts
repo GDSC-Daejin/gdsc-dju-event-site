@@ -26,14 +26,15 @@ export const SpeakerWrapper = styled.div`
   display: flex;
   width: 100%;
   flex-direction: row;
+  align-items: center;
 `;
 export const SpeakerImage = styled.img`
-  width: 40px;
-  height: 40px;
+  width: 50px;
+  height: 50px;
   border-radius: 50px;
 `;
 export const SpeakerName = styled.div`
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSize.body1};
   color: ${({ theme }) => theme.colors.grey900};
 `;
 export const SpeakerRole = styled.div`

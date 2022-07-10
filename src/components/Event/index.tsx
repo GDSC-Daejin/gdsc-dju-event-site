@@ -1,5 +1,8 @@
 import React from 'react';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
+import { EventType } from '../../types/event';
+import { google } from '../../utils/createGoogleCalendarLink';
+import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
 import CalendarButton, { EventButton } from '../Button';
 import {
   EventButtonWrapper,
@@ -13,23 +16,51 @@ import {
   StyledSectionBar,
 } from './styled';
 
-const Event = () => {
+const Event: React.FC<EventType> = ({
+  title,
+  description,
+  start,
+  end,
+  applyLink,
+}) => {
   return (
     <LayoutContainer>
       <ContainerInner>
         <EventWrapper>
           <EventInfoWrapper>
-            <EventTitle>GDSC DJU Hackathon #1</EventTitle>
-            <EventDescription>모두가 참여할 수 있는 해커톤</EventDescription>
+            <EventTitle>{title}</EventTitle>
+            <EventDescription>{description}</EventDescription>
             <EventDateWrapper>
-              <EventDate>2022.05.18</EventDate>
+              <EventDate>{eventDateFilter(start, end)}</EventDate>
               <StyledSectionBar />
-              <EventTime>8:00 PM - 10:00 PM</EventTime>
+              <EventTime>{eventTimeFilter(start, end)}</EventTime>
             </EventDateWrapper>
           </EventInfoWrapper>
           <EventButtonWrapper>
-            <EventButton color={'googleGreen'}>해커톤 신청하기</EventButton>
-            <CalendarButton>구글 캘린더에 추가하기</CalendarButton>
+            <EventButton
+              color={'googleGreen'}
+              onClick={() => window.open(applyLink, '_blank')}
+            >
+              해커톤 신청하기
+            </EventButton>
+            <CalendarButton
+              onClick={() =>
+                window.open(
+                  google({
+                    start: `${start} +09:00`,
+                    end: `${end} +09:00`,
+                    title: title,
+                    description: description,
+                    organizer: {
+                      name: 'GDSC DJU',
+                      email: 'gdscdju@gmail.com',
+                    },
+                  }),
+                )
+              }
+            >
+              구글 캘린더에 추가하기
+            </CalendarButton>
           </EventButtonWrapper>
         </EventWrapper>
       </ContainerInner>

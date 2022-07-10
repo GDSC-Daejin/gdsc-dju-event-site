@@ -12,7 +12,9 @@
   "author": "JunHyeok <jhjeong00@gmail.com>",
   "bin": "./bin/react-vite-todo-boilerplate.js",
   "dependencies": {
+    "dayjs": "^1.11.3",
     "framer-motion": "^6.4.3",
+    "query-string": "^7.1.1",
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-router-dom": "^6.0.1",

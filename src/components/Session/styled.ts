@@ -55,6 +55,10 @@ export const SessionCardSection = styled.section`
   cursor: grab;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
   ::-webkit-scrollbar {
     display: none;
   }

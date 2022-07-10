@@ -1,6 +1,7 @@
 import React from 'react';
 import Event from '../components/Event';
 import Session from '../components/Session';
+import { eventsData } from '../siteDatas/eventsData';
 import { ContainerInner, LayoutContainer } from '../styles/layouts';
 
 import {
@@ -8,23 +9,9 @@ import {
   EventLayoutWrapper,
   EventPageTitle,
   EventsWrapper,
-} from './event.styled';
+} from './events.styled';
 
-const EventLayout = () => {
-  const Events = [
-    {
-      type: 'event',
-    },
-    {
-      type: 'session',
-    },
-    {
-      type: 'session',
-    },
-    {
-      type: 'session',
-    },
-  ];
+const EventsLayout = () => {
   return (
     <EventLayoutWrapper>
       <LayoutContainer>
@@ -32,9 +19,9 @@ const EventLayout = () => {
           <EventPageTitle>Events</EventPageTitle>
         </ContainerInner>
       </LayoutContainer>
-      {Events.map((data, id) => (
+      {eventsData.map((data, id) => (
         <EventsWrapper key={id}>
-          {data.type === 'event' ? <Event /> : <Session />}
+          {data.type == 'session' ? <Session {...data} /> : <Event {...data} />}
           <EventContour />
         </EventsWrapper>
       ))}
@@ -42,4 +29,4 @@ const EventLayout = () => {
   );
 };
 
-export default EventLayout;
+export default EventsLayout;

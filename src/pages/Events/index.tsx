@@ -2,8 +2,7 @@ import { motion } from 'framer-motion';
 import React from 'react';
 import styled from 'styled-components';
 import { pageAnimate, pageTransitionAnimate } from '../../components/animation';
-import EventLayout from '../../layout/event';
-import { ContainerInner, LayoutContainer } from '../../styles/layouts';
+import EventLayout from '../../layout/events';
 
 const EventsContainer = styled(motion.div)``;
 
