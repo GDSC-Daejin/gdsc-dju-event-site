@@ -36,7 +36,9 @@ const HomeLayout = () => {
         >
           {currentEvent.type == 'session' ? '세션 신청하기' : '이벤트 신청하기'}
         </StyledButton>
-        <StyledMoreButton onClick={() => navigate('/')}>
+        <StyledMoreButton
+          onClick={() => window.open('https://gdsc-dju.web.app/', '_blank')}
+        >
           더 알아보기
         </StyledMoreButton>
       </ButtonWrapper>
