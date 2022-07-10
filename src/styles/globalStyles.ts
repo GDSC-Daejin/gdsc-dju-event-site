@@ -2,49 +2,48 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   @font-face {
-    font-family: 'Google Sans Display';
-    src: url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype');;
+    font-family: 'Google Sans Display', sans-serif;
+    src: url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype');
     font-weight: 400;
-
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
-    font-family: 'Google Sans Display';
+    
+    font-family: 'Google Sans Display', sans-serif;
     src: url('/fonts/GoogleSansDisplay-Bold.ttf') format('truetype');
     font-weight: 700;
 
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
-    font-family: 'Google Sans Display';
+    font-family: 'Google Sans Display', sans-serif;
     src: url('/fonts/GoogleSansDisplay-Medium.ttf') format('truetype');
     font-weight: 500;
-
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('/fonts/SpoqaHanSansNeo-Thin.otf') format('opentype'),
     url('/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
     font-weight: 100;
 
     unicode-range: U+AC00-U+D7A3;
   } @font-face {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('/fonts/SpoqaHanSansNeo-Light.otf') format('opentype');
   url('/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
     font-weight: 300;
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('/fonts/SpoqaHanSansNeo-Regular.otf') format('opentype');
   url('/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
     font-weight: 400;
     unicode-range: U+AC00-U+D7A3;
 
   } @font-face {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('/fonts/SpoqaHanSansNeo-Medium.otf') format('opentype');
   url('/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
     font-weight: 500;
@@ -52,7 +51,7 @@ const GlobalStyles = createGlobalStyle`
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
-    font-family: 'Spoqa Han Sans Neo';
+    font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('/fonts/SpoqaHanSansNeo-Bold.otf') format('opentype');
   url('/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
     font-weight: 700;
