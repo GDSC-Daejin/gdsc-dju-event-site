@@ -6,18 +6,21 @@ const GlobalStyles = createGlobalStyle`
     src: url('../fonts/GoogleSansDisplay-Regular.ttf') format('truetype');;
     font-weight: 400;
     font-display: swap;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'Google Sans Display', sans-serif;
     src: url('../fonts/GoogleSansDisplay-Bold.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'Google Sans Display', sans-serif;
     src: url('../fonts/GoogleSansDisplay-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
+    unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -25,12 +28,14 @@ const GlobalStyles = createGlobalStyle`
     url('../fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
     font-weight: 100;
     font-display: swap;
+    unicode-range: U+AC00-U+D7A3;
   } @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
     src: url('../fonts/SpoqaHanSansNeo-Light.otf') format('opentype');
   url('../fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
     font-weight: 300;
     font-display: swap;
+    unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -38,6 +43,7 @@ const GlobalStyles = createGlobalStyle`
   url('../fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
     font-weight: 400;
     font-display: swap;
+    unicode-range: U+AC00-U+D7A3;
 
   } @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -45,6 +51,7 @@ const GlobalStyles = createGlobalStyle`
   url('../fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
     font-weight: 500;
     font-display: swap;
+    unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
@@ -52,6 +59,7 @@ const GlobalStyles = createGlobalStyle`
   url('../fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
     font-weight: 700;
     font-display: swap;
+    unicode-range: U+AC00-U+D7A3;
 
   }
   * {
