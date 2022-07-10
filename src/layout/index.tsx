@@ -2,6 +2,7 @@ import { AnimatePresence } from 'framer-motion';
 import React from 'react';
 import { Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
+import { Footer } from '../components/Footer';
 import Navigation from '../components/Navigation';
 import { useTheme } from '../hooks/ThemeHandler';
 import Contributors from '../pages/Contributors';
@@ -29,6 +30,7 @@ const Index = () => {
           <Route path={'/contributors'} element={<Contributors />} />
         </Routes>
       </AnimatePresence>
+      <Footer />
     </ThemeProvider>
   );
 };

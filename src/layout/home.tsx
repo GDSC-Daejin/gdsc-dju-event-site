@@ -21,7 +21,9 @@ const HomeLayout = () => {
       <HomeTitle>{currentEvent.title}</HomeTitle>
       <StyledDate>{currentEvent.description}</StyledDate>
       <StyledTime>
-        {eventDateFilter(currentEvent.start, currentEvent.end)}{' '}
+        {eventDateFilter(currentEvent.start, currentEvent.end)}
+      </StyledTime>
+      <StyledTime>
         {eventTimeFilter(currentEvent.start, currentEvent.end)}
       </StyledTime>
       <ButtonWrapper>

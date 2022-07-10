@@ -24,3 +24,21 @@ export const pageAnimate = {
   type: 'tween',
   ease: 'anticipate',
 };
+export const contributorAnimate = {
+  initial: {
+    opacity: 0.5,
+  },
+  animate: {
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      delay: 0.2,
+    },
+  },
+  exit: {
+    opacity: 0.5,
+    transition: {
+      duration: 0.3,
+    },
+  },
+};

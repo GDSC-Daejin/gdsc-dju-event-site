@@ -43,6 +43,69 @@ export const userData: UserDataType = {
     role: 'GDSC DJU Core',
     position: 'Backend Developer',
   },
+  Panda: {
+    name: 'Panda',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02U0C94L1X-8aa26610d6c6-512',
+    role: 'GDSC DJU Member',
+    position: 'Backend Developer',
+  },
+  Toby: {
+    name: 'Toby',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02CM3382ER-36976c8d33db-512',
+    role: 'GDSC DJU Member',
+    position: 'Android Developer',
+  },
+  Chois: {
+    name: 'Chois',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02T78C2U07-daec01d94cab-512',
+    role: 'GDSC DJU Member',
+    position: 'Frontend Developer',
+  },
+  Gabi: {
+    name: 'Gabi',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02CPF84WSX-cb49cf16f436-512',
+    role: 'GDSC DJU Member',
+    position: 'Frontend Developer',
+  },
+  Cindy: {
+    name: 'Cindy',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02TMHKQJQ6-d67390e237d6-512',
+    role: 'GDSC DJU Member',
+    position: 'Designer',
+  },
+  Gunzo: {
+    name: 'Gunzo',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U030NT7MP2Q-343ebaccbba1-512',
+    role: 'GDSC DJU Member',
+    position: 'Designer',
+  },
+  Reese: {
+    name: 'Reese',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02CH2LV8VC-35dfadcdd25e-512',
+    role: 'GDSC DJU Member',
+    position: 'Backend Developer',
+  },
+  Marine: {
+    name: 'Marine',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02U886HJPJ-df67e0a286cf-512',
+    role: 'GDSC DJU Member',
+    position: 'Backend Developer',
+  },
+  Hazei: {
+    name: 'Toby',
+    profileImage:
+      'https://ca.slack-edge.com/T02BE2ERU5A-U02CM3382ER-36976c8d33db-512',
+    role: 'GDSC DJU Member',
+    position: 'Android Developer',
+  },
   Saboten: {
     name: '선인장 ',
     profileImage:

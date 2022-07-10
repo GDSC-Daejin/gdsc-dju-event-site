@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ContributorCard from '../components/ContributorCard';
+import { contributorsData } from '../siteDatas/contributorsData';
 import {
   ContributorCardWrapper,
   ContributorsDescription,
@@ -9,40 +10,6 @@ import {
 } from './contributors.styled';
 
 const ContributorsLayout = () => {
-  const ContributorsData = [
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-    {
-      name: 'Jason',
-      role: 'GDSC DJU Lead',
-    },
-  ];
   return (
     <ContributorsLayoutWrapper>
       <ContributorsTitle>Contributors</ContributorsTitle>
@@ -50,9 +17,9 @@ const ContributorsLayout = () => {
         GDSC Daejin Univ.가 운영하는 행사/서비스에 기여해주신 분들 입니다.
       </ContributorsDescription>
       <ContributorsSection>
-        {ContributorsData.map((data, id) => (
+        {contributorsData.map((data, id) => (
           <ContributorCardWrapper key={id}>
-            <ContributorCard />
+            <ContributorCard {...data} />
           </ContributorCardWrapper>
         ))}
       </ContributorsSection>

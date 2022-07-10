@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 export const ContributorsLayoutWrapper = styled.div`
   margin-top: 70px;
+  position: static;
 `;
 export const ContributorsTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.h1};
