@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ContributorsLayoutWrapper = styled.div`
-  margin-top: 70px;
+  margin: 70px 0;
   position: static;
 `;
 export const ContributorsTitle = styled.h1`
