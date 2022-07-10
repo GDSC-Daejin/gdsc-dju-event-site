@@ -63,7 +63,6 @@ const GlobalStyles = createGlobalStyle`
 
   }
   * {
-    font-family: 'Google Sans Display','Spoqa Han Sans Neo', sans-serif;
     margin: 0;
     font-size: 10px;
     word-break: keep-all;
@@ -88,6 +87,7 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     font-size: 10px;
     vertical-align: baseline;
+    font-family: 'Google Sans Display','Spoqa Han Sans Neo', sans-serif;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,
