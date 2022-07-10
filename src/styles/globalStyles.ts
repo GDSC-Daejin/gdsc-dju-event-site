@@ -3,21 +3,21 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'GoogleSansDisplay', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Regular.otf") format('opentype');
+    src: url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Regular.otf") format('opentype'), url("/fonts/GoogleSansDisplay-Regular.woff") format('woff') ;
     font-weight: 400;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     
     font-family: 'GoogleSansDisplay', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Bold.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Bold.otf") format('opentype');
+    src: url('/fonts/GoogleSansDisplay-Bold.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Bold.otf") format('opentype'), url("/fonts/GoogleSansDisplay-Bold.woff") format('woff');
     font-weight: 700;
 
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'GoogleSansDisplay', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Medium.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Medium.otf") format('opentype');
+    src: url('/fonts/GoogleSansDisplay-Medium.ttf') format('truetype'), url("/fonts/GoogleSansDisplay-Medium.otf") format('opentype'), url("/fonts/GoogleSansDisplay-Medium.woff") format('woff');
     font-weight: 500;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
