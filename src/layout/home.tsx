@@ -28,7 +28,7 @@ const HomeLayout = () => {
         <StyledButton
           onClick={() =>
             !checkEventEnd(currentEvent.end) &&
-            window.open(currentEvent.applyLink, '_blank')
+            window.open(currentEvent.applyLink + 'register/tickets', '_blank')
           }
           eventType={currentEvent.type}
         >

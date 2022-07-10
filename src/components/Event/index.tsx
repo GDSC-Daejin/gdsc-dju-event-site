@@ -42,7 +42,8 @@ const Event: React.FC<EventType> = ({
               isEnd={checkEventEnd(end)}
               color={'googleGreen'}
               onClick={() =>
-                !checkEventEnd(end) && window.open(applyLink, '_blank')
+                !checkEventEnd(end) &&
+                window.open(applyLink + 'register/tickets', '_blank')
               }
             >
               {checkEventEnd(end) ? '종료된 이벤트이에요' : '이벤트 신청하기'}

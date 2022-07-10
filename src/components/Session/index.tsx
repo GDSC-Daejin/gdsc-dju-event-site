@@ -90,7 +90,8 @@ const Session: React.FC<SessionEventType> = ({
             <EventApplyWrapper>
               <EventButton
                 onClick={() =>
-                  !checkEventEnd(end) && window.open(applyLink, '_blank')
+                  !checkEventEnd(end) &&
+                  window.open(applyLink + 'register/tickets', '_blank')
                 }
                 isEnd={checkEventEnd(end)}
               >
