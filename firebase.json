@@ -2,13 +2,13 @@
   "hosting": {
     "public": "dist",
     "headers": [ {
-      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "source" : "/*.@(eot|otf|ttf|ttc|woff|font.css)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
         "value" : "*"
       } ]
     }, {
-      "source" : "**/*.@(js|css)",
+      "source" : "/*.@(js|css)",
       "headers" : [ {
         "key" : "Cache-Control",
         "value" : "max-age=604800"
