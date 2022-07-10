@@ -27,7 +27,7 @@ export const projectData = [
   },
   {
     projectName: 'GDSC DJU Onboarding',
-    members: ['Jason'],
+    members: ['Jason', 'Harry', 'Rocoli'],
   },
   {
     projectName: 'GDSC DJU Hey Teddy Bear',
