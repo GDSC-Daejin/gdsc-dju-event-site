@@ -12,6 +12,7 @@ export const ContributorCardWrapper = styled(motion.div)`
   flex-direction: column;
   align-items: center;
   text-align: center;
+  position: relative;
 `;
 export const ContributorImage = styled(motion.img)`
   width: 100px;
@@ -36,4 +37,15 @@ export const ContributeList = styled(motion.div)`
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey700};
 `;
-export const ContributorWrapper = styled(motion.div)``;
+export const ContributorWrapper = styled(motion.div)`
+  display: flex;
+  border-radius: 10px;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  background-color: rgba(0, 0, 0, 0.03);
+  backdrop-filter: blur(30px);
+`;

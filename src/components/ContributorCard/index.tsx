@@ -8,6 +8,7 @@ import {
   ContributorImage,
   ContributorName,
   ContributorRole,
+  ContributorWrapper,
 } from './styled';
 
 const ContributorCard: React.FC<ContributorType> = ({
@@ -24,34 +25,8 @@ const ContributorCard: React.FC<ContributorType> = ({
         onMouseEnter={() => setHover(true)}
         onMouseLeave={() => setHover(false)}
       >
-        {!hover ? (
-          <>
-            <ContributorImage
-              src={profileImage}
-              variants={contributorAnimate}
-              initial={'initial'}
-              animate={'animate'}
-              exit={'exit'}
-            />
-            <ContributorName
-              variants={contributorAnimate}
-              initial={'initial'}
-              animate={'animate'}
-              exit={'exit'}
-            >
-              {name}
-            </ContributorName>
-            <ContributorRole
-              variants={contributorAnimate}
-              initial={'initial'}
-              animate={'animate'}
-              exit={'exit'}
-            >
-              {role}
-            </ContributorRole>
-          </>
-        ) : (
-          <ContributorRole
+        {hover && (
+          <ContributorWrapper
             variants={contributorAnimate}
             initial={'initial'}
             animate={'animate'}
@@ -60,8 +35,31 @@ const ContributorCard: React.FC<ContributorType> = ({
             {contributes.map((data, id) => (
               <ContributeList key={id}>{data}</ContributeList>
             ))}
-          </ContributorRole>
+          </ContributorWrapper>
         )}
+        <ContributorImage
+          src={profileImage}
+          variants={contributorAnimate}
+          initial={'initial'}
+          animate={'animate'}
+          exit={'exit'}
+        />
+        <ContributorName
+          variants={contributorAnimate}
+          initial={'initial'}
+          animate={'animate'}
+          exit={'exit'}
+        >
+          {name}
+        </ContributorName>
+        <ContributorRole
+          variants={contributorAnimate}
+          initial={'initial'}
+          animate={'animate'}
+          exit={'exit'}
+        >
+          {role}
+        </ContributorRole>
       </ContributorCardWrapper>
     </AnimatePresence>
   );

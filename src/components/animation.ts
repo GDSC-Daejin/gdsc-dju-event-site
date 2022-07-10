@@ -30,9 +30,6 @@ export const contributorAnimate = {
   },
   animate: {
     opacity: 1,
-    transition: {
-      delay: 0.2,
-    },
   },
   exit: {
     opacity: 0.5,
