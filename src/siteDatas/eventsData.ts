@@ -4,10 +4,10 @@ import { userData } from './userData';
 export const eventsData: EventsDataType = [
   {
     type: 'session',
-    title: 'GDSC DJU public Session #2',
+    title: 'GDSC DJU \n public Session #2',
     description: '모두가 참여할 수 있는 public Session',
-    start: '2022-05-21 20:00',
-    end: '2022-05-21 22:00',
+    start: '2022-07-21 21:00',
+    end: '2022-07-21 22:00',
     applyLink: '',
     sessions: [
       {

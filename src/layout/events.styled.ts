@@ -15,7 +15,7 @@ export const EventsWrapper = styled.div`
   align-items: center;
 `;
 export const EventContour = styled.div`
-  max-width: 1160px;
+  max-width: 1100px;
   height: 1px;
   width: 100%;
   margin: 40px 0;

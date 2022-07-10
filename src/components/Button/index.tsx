@@ -3,7 +3,7 @@ import styled, { css } from 'styled-components';
 import calendarIcon from '../../assets/icons/calendar.svg';
 import { lightColors } from '../../styles/lightColors';
 
-export const CalendarButtonStyle = styled.button`
+export const CalendarButtonStyle = styled.button<{ isEnd: boolean }>`
   padding: 16px 30px;
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: ${({ theme }) => theme.colors.grey500};
@@ -13,12 +13,21 @@ export const CalendarButtonStyle = styled.button`
   display: flex;
   align-items: center;
   cursor: pointer;
+  ${({ isEnd }) =>
+    isEnd &&
+    css`
+      cursor: not-allowed;
+      color: ${({ theme }) => theme.colors.grey200};
+    `}
 `;
 export const CalendarImage = styled.img`
   margin-right: 10px;
   height: 20px;
 `;
-export const EventButton = styled.button<{ color?: keyof typeof lightColors }>`
+export const EventButton = styled.button<{
+  color?: keyof typeof lightColors;
+  isEnd: boolean;
+}>`
   padding: 16px 40px;
   font-size: ${({ theme }) => theme.fontSize.body2};
   color: #fff;
@@ -31,13 +40,20 @@ export const EventButton = styled.button<{ color?: keyof typeof lightColors }>`
     css`
       background: ${({ theme }) => theme.colors[color]};
     `}
+  ${({ isEnd }) =>
+    isEnd &&
+    css`
+      cursor: not-allowed;
+      background: ${({ theme }) => theme.colors.tossBlue200};
+    `}
 `;
 const CalendarButton: React.FC<{
   children: React.ReactNode;
   onClick: () => void;
-}> = ({ children, onClick }) => {
+  isEnd: boolean;
+}> = ({ children, onClick, isEnd }) => {
   return (
-    <CalendarButtonStyle onClick={onClick}>
+    <CalendarButtonStyle onClick={onClick} isEnd={isEnd}>
       <CalendarImage src={calendarIcon} />
       {children}
     </CalendarButtonStyle>

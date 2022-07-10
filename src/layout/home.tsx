@@ -1,5 +1,8 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import { eventsData } from '../siteDatas/eventsData';
+import { checkEventEnd } from '../utils/checkEventEnd';
+import { eventDateFilter, eventTimeFilter } from '../utils/eventDateFilter';
 import {
   ButtonWrapper,
   HomeLayoutWrapper,
@@ -12,16 +15,25 @@ import {
 
 const HomeLayout = () => {
   const navigate = useNavigate();
-
+  const currentEvent = eventsData[0];
   return (
     <HomeLayoutWrapper>
-      <HomeTitle>
-        모두가 참여할 수 있는 <br /> public Session
-      </HomeTitle>
-      <StyledDate>2022.07.20 (Wed)</StyledDate>
-      <StyledTime>9:00 PM - 11:00 PM</StyledTime>
+      <HomeTitle>{currentEvent.title}</HomeTitle>
+      <StyledDate>{currentEvent.description}</StyledDate>
+      <StyledTime>
+        {eventDateFilter(currentEvent.start, currentEvent.end)}{' '}
+        {eventTimeFilter(currentEvent.start, currentEvent.end)}
+      </StyledTime>
       <ButtonWrapper>
-        <StyledButton onClick={() => navigate('/')}>세션 신청하기</StyledButton>
+        <StyledButton
+          onClick={() =>
+            !checkEventEnd(currentEvent.end) &&
+            window.open(currentEvent.applyLink, '_blank')
+          }
+          eventType={currentEvent.type}
+        >
+          {currentEvent.type == 'session' ? '세션 신청하기' : '이벤트 신청하기'}
+        </StyledButton>
         <StyledMoreButton onClick={() => navigate('/')}>
           더 알아보기
         </StyledMoreButton>

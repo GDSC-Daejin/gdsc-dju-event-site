@@ -1,6 +1,7 @@
 import React from 'react';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 import { EventType } from '../../types/event';
+import { checkEventEnd } from '../../utils/checkEventEnd';
 import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
 import CalendarButton, { EventButton } from '../Button';
@@ -38,13 +39,18 @@ const Event: React.FC<EventType> = ({
           </EventInfoWrapper>
           <EventButtonWrapper>
             <EventButton
+              isEnd={checkEventEnd(end)}
               color={'googleGreen'}
-              onClick={() => window.open(applyLink, '_blank')}
+              onClick={() =>
+                !checkEventEnd(end) && window.open(applyLink, '_blank')
+              }
             >
               해커톤 신청하기
             </EventButton>
             <CalendarButton
+              isEnd={checkEventEnd(end)}
               onClick={() =>
+                !checkEventEnd(end) &&
                 window.open(
                   google({
                     start: `${start} +09:00`,

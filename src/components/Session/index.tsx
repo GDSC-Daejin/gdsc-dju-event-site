@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
-import { userData } from '../../siteDatas/userData';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 import { SessionEventType } from '../../types/event';
+import { checkEventEnd } from '../../utils/checkEventEnd';
 import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
 import CalendarButton, { EventButton } from '../Button';
@@ -73,7 +73,6 @@ const Session: React.FC<SessionEventType> = ({
   useEffect(() => {
     sectionRef.current && setSectionWidth(sectionRef.current?.offsetWidth);
   }, [sectionRef]);
-
   return (
     <EventSectionWrapper>
       <LayoutContainer>
@@ -89,11 +88,18 @@ const Session: React.FC<SessionEventType> = ({
               </EventDateWrapper>
             </EventInfoWrapper>
             <EventApplyWrapper>
-              <EventButton onClick={() => window.open(applyLink, '_blank')}>
+              <EventButton
+                onClick={() =>
+                  !checkEventEnd(end) && window.open(applyLink, '_blank')
+                }
+                isEnd={checkEventEnd(end)}
+              >
                 세션 신청하기
               </EventButton>
               <CalendarButton
+                isEnd={checkEventEnd(end)}
                 onClick={() =>
+                  !checkEventEnd(end) &&
                   window.open(
                     google({
                       start: `${start} +09:00`,
