@@ -12,7 +12,7 @@ export const LayoutContainer = styled(motion.div)`
   min-width: 320px;
   flex: 1;
 `;
-export const ContainerInner = styled.div`
+export const ContainerInner = styled(motion.div)`
   width: 92%;
   height: 100%;
   max-width: calc(100% - 48px);

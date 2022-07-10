@@ -1,5 +1,7 @@
 import React from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import gdsclogo from '../../assets/GDSCLogo.svg';
+import { ThemeType } from '../../hooks/ThemeHandler';
 import ThemeToggleButton from '../ThemeToggleButton';
 import {
   GDSCImage,
@@ -11,17 +13,15 @@ import {
   StyledLink,
   StyledLogoWrapper,
 } from './styled';
-import gdsclogo from '../../assets/GDSCLogo.svg';
-import { ThemeType, useTheme } from '../../hooks/ThemeHandler';
 
 export const ROUTES = [
   {
-    route: '/event',
+    route: '/events',
     title: 'Events',
   },
   {
-    route: '/speaker',
-    title: 'Speaker',
+    route: '/contributors',
+    title: 'Contributors',
   },
   {
     route: '/faq',

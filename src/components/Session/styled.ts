@@ -1,10 +1,10 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const EventSectionWrapper = styled.div`
   margin-top: 40px;
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  width: 100%;
 `;
 
 export const EventTitle = styled.h2`
@@ -43,6 +43,8 @@ export const EventInfoWrapper = styled.div`
 export const EventApplyWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
 `;
 
 export const SessionCardSection = styled.section`
@@ -50,14 +52,24 @@ export const SessionCardSection = styled.section`
   flex-direction: row;
   margin-top: 30px;
   overflow-x: scroll;
+  cursor: grab;
   -ms-overflow-style: none;
   scrollbar-width: none;
   ::-webkit-scrollbar {
     display: none;
   }
 `;
-export const SessionCardWrapper = styled.div`
-  margin-left: 20px;
+export const SessionCardWrapper = styled.div<{ sectionWidth: string }>`
+  margin: 0 10px;
+
+  ${({ sectionWidth }) =>
+    sectionWidth &&
+    css`
+      transform: translateX(calc((100vw - ${sectionWidth}) / 2 + 20px));
+      &:last-child {
+        padding-right: calc((100vw - ${sectionWidth}) / 2 + 20px);
+      }
+    `}
   &:first-child {
     margin-left: 0;
   }

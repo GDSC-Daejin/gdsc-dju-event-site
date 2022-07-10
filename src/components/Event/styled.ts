@@ -42,4 +42,6 @@ export const EventInfoWrapper = styled.div`
 export const EventButtonWrapper = styled.div`
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
 `;

@@ -2,7 +2,7 @@ import React from 'react';
 import { pageAnimate, pageTransitionAnimate } from '../../components/animation';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 
-const Faq = () => {
+const Contributors = () => {
   return (
     <LayoutContainer>
       <ContainerInner
@@ -12,10 +12,10 @@ const Faq = () => {
         variants={pageTransitionAnimate}
         transition={pageAnimate}
       >
-        faq
+        Contributors
       </ContainerInner>
     </LayoutContainer>
   );
 };
 
-export default Faq;
+export default Contributors;

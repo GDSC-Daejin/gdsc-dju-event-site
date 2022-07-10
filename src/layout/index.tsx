@@ -4,10 +4,11 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import Navigation from '../components/Navigation';
 import { useTheme } from '../hooks/ThemeHandler';
-import Event from '../pages/Event';
+import Contributors from '../pages/Contributors';
+import Events from '../pages/Events';
 import Faq from '../pages/Faq';
 import Home from '../pages/Home';
-import Speaker from '../pages/Speaker';
+
 import GlobalStyles from '../styles/globalStyles';
 import { NavigationBlock } from '../styles/layouts';
 import { darkTheme, lightTheme } from '../styles/theme';
@@ -23,9 +24,9 @@ const Index = () => {
       <AnimatePresence>
         <Routes key={location.pathname} location={location}>
           <Route path={'/*'} element={<Home />} />
-          <Route path={'/event'} element={<Event />} />
+          <Route path={'/events'} element={<Events />} />
           <Route path={'/faq'} element={<Faq />} />
-          <Route path={'/speaker'} element={<Speaker />} />
+          <Route path={'/contributors'} element={<Contributors />} />
         </Routes>
       </AnimatePresence>
     </ThemeProvider>

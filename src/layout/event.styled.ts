@@ -10,8 +10,16 @@ export const EventPageTitle = styled.h1`
   color: ${({ theme }) => theme.colors.grey900};
 `;
 export const EventsWrapper = styled.div`
-  padding-bottom: 40px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.grey200};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
+export const EventContour = styled.div`
+  max-width: 1160px;
+  height: 1px;
+  width: 100%;
+  margin: 40px 0;
+  background: ${({ theme }) => theme.colors.grey100};
   &:last-child {
     border-bottom: 1px solid transparent;
   }

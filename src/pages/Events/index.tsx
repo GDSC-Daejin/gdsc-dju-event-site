@@ -1,19 +1,24 @@
+import { motion } from 'framer-motion';
 import React from 'react';
+import styled from 'styled-components';
 import { pageAnimate, pageTransitionAnimate } from '../../components/animation';
+import EventLayout from '../../layout/event';
 import { ContainerInner, LayoutContainer } from '../../styles/layouts';
 
-const Speaker = () => {
+const EventsContainer = styled(motion.div)``;
+
+const Events = () => {
   return (
-    <LayoutContainer
+    <EventsContainer
       initial="start"
       animate="end"
       exit="out"
       variants={pageTransitionAnimate}
       transition={pageAnimate}
     >
-      <ContainerInner>speaker</ContainerInner>
-    </LayoutContainer>
+      <EventLayout />
+    </EventsContainer>
   );
 };
 
-export default Speaker;
+export default Events;

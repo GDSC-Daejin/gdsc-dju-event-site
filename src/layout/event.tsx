@@ -1,8 +1,10 @@
 import React from 'react';
 import Event from '../components/Event';
 import Session from '../components/Session';
+import { ContainerInner, LayoutContainer } from '../styles/layouts';
 
 import {
+  EventContour,
   EventLayoutWrapper,
   EventPageTitle,
   EventsWrapper,
@@ -25,11 +27,15 @@ const EventLayout = () => {
   ];
   return (
     <EventLayoutWrapper>
-      <EventPageTitle>Events</EventPageTitle>
-
+      <LayoutContainer>
+        <ContainerInner>
+          <EventPageTitle>Events</EventPageTitle>
+        </ContainerInner>
+      </LayoutContainer>
       {Events.map((data, id) => (
         <EventsWrapper key={id}>
           {data.type === 'event' ? <Event /> : <Session />}
+          <EventContour />
         </EventsWrapper>
       ))}
     </EventLayoutWrapper>
