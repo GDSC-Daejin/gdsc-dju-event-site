@@ -26,13 +26,18 @@ const HomeLayout = () => {
       </StyledTime>
       <ButtonWrapper>
         <StyledButton
+          isEnd={checkEventEnd(currentEvent.end)}
           onClick={() =>
             !checkEventEnd(currentEvent.end) &&
             window.open(currentEvent.applyLink + 'register/tickets', '_blank')
           }
           eventType={currentEvent.type}
         >
-          {currentEvent.type == 'session' ? '세션 신청하기' : '이벤트 신청하기'}
+          {!checkEventEnd(currentEvent.end)
+            ? currentEvent.type == 'session'
+              ? '세션 신청하기'
+              : '이벤트 신청하기'
+            : '종료된 이벤트에요'}
         </StyledButton>
         <StyledMoreButton
           onClick={() => window.open('https://gdsc-dju.web.app/', '_blank')}

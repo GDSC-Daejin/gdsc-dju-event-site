@@ -31,7 +31,10 @@ export const ButtonWrapper = styled.div`
   gap: 30px;
   margin-top: 40px;
 `;
-export const StyledButton = styled.button<{ eventType?: EventsType }>`
+export const StyledButton = styled.button<{
+  eventType?: EventsType;
+  isEnd: boolean;
+}>`
   font-size: ${({ theme }) => theme.fontSize.body1};
   color: #fff;
   background: ${({ theme }) => theme.colors.googleBlue};
@@ -47,6 +50,12 @@ export const StyledButton = styled.button<{ eventType?: EventsType }>`
       : css`
           background: ${({ theme }) => theme.colors.googleGreen};
         `}
+  ${({ isEnd }) =>
+    isEnd &&
+    css`
+      cursor: not-allowed;
+      background: ${({ theme }) => theme.colors.tossBlue200};
+    `}
 `;
 export const StyledMoreButton = styled.button`
   font-size: ${({ theme }) => theme.fontSize.body1};
