@@ -8,7 +8,8 @@ export const eventsData: EventsDataType = [
     description: '모두가 참여할 수 있는 public Session',
     start: '2022-07-20 21:00',
     end: '2022-07-20 22:00',
-    applyLink: 'https://festa.io/events/jzANzyaSGSBxi9BJYgRB5w',
+    applyLink:
+      'https://festa.io/events/jzANzyaSGSBxi9BJYgRB5w/register/tickets',
     sessions: [
       {
         title: '비전공 개발자에서 동아리 내 백엔드 최강자가 되기까지',
