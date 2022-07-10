@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 export const EventLayoutWrapper = styled.div`
   display: flex;
@@ -14,13 +14,15 @@ export const EventsWrapper = styled.div`
   flex-direction: column;
   align-items: center;
 `;
-export const EventContour = styled.div`
+export const EventContour = styled.div<{ last: boolean }>`
   max-width: 1100px;
   height: 1px;
   width: 100%;
   margin: 40px 0;
   background: ${({ theme }) => theme.colors.grey100};
-  &:last-child {
-    border-bottom: 1px solid transparent;
-  }
+  ${({ last }) =>
+    last &&
+    css`
+      background: transparent;
+    `}
 `;

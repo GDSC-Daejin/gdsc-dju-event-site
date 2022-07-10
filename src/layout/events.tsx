@@ -22,7 +22,7 @@ const EventsLayout = () => {
       {eventsData.map((data, id) => (
         <EventsWrapper key={id}>
           {data.type == 'session' ? <Session {...data} /> : <Event {...data} />}
-          <EventContour />
+          <EventContour last={id === eventsData.length - 1} />
         </EventsWrapper>
       ))}
     </EventLayoutWrapper>
