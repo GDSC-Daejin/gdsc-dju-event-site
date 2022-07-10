@@ -45,7 +45,7 @@ const Event: React.FC<EventType> = ({
                 !checkEventEnd(end) && window.open(applyLink, '_blank')
               }
             >
-              해커톤 신청하기
+              {checkEventEnd(end) ? '종료된 이벤트이에요' : '이벤트 신청하기'}
             </EventButton>
             <CalendarButton
               isEnd={checkEventEnd(end)}
