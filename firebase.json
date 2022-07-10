@@ -2,7 +2,7 @@
   "hosting": {
     "public": "dist",
     "headers": [ {
-      "source" : "/*.@(eot|otf|ttf|ttc|woff|font.css)",
+      "source" : "/.@(eot|otf|ttf|ttc|woff|font.css)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
         "value" : "*"
