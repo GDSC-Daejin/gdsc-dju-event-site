@@ -6,8 +6,8 @@ export const eventsData: EventsDataType = [
     type: 'session',
     title: 'GDSC DJU \n public Session #2',
     description: '모두가 참여할 수 있는 public Session',
-    start: '2022-07-21 21:00',
-    end: '2022-07-21 22:00',
+    start: '2022-07-20 21:00',
+    end: '2022-07-20 22:00',
     applyLink: 'https://festa.io/events/jzANzyaSGSBxi9BJYgRB5w',
     sessions: [
       {
