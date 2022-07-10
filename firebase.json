@@ -1,7 +1,19 @@
 {
   "hosting": {
     "public": "dist",
-    "headers": [ {
+    "headers": [{
+      "source": "**",
+      "headers": [{
+        "key": "Access-Control-Allow-Origin",
+        "value": "*"
+      }, {
+        "key": "Access-Control-Allow-Credentials",
+        "value": "true"
+      }, {
+        "key": "Access-Control-Allow-Headers",
+        "value": "Access-Control-Allow-Origin, Access-Control-Allow-Credentials"
+      }]
+    }, {
       "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
       "headers": [ {
         "key": "Access-Control-Allow-Origin",
