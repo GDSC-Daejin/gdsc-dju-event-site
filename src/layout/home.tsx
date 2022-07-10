@@ -14,7 +14,6 @@ import {
 } from './home.styled';
 
 const HomeLayout = () => {
-  const navigate = useNavigate();
   const currentEvent = eventsData[0];
   return (
     <HomeLayoutWrapper>
@@ -22,8 +21,7 @@ const HomeLayout = () => {
       <StyledDate>{currentEvent.description}</StyledDate>
       <StyledTime>
         {eventDateFilter(currentEvent.start, currentEvent.end)}
-      </StyledTime>
-      <StyledTime>
+        {' | '}
         {eventTimeFilter(currentEvent.start, currentEvent.end)}
       </StyledTime>
       <ButtonWrapper>
