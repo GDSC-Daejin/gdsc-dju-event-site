@@ -3,57 +3,57 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyles = createGlobalStyle`
   @font-face {
     font-family: 'Google Sans Display', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Regular.ttf') format('truetype');
+    src: url('/fonts/GoogleSansDisplay-Regular.ttf');
     font-weight: 400;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     
     font-family: 'Google Sans Display', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Bold.ttf') format('truetype');
+    src: url('/fonts/GoogleSansDisplay-Bold.ttf');
     font-weight: 700;
 
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'Google Sans Display', sans-serif;
-    src: url('/fonts/GoogleSansDisplay-Medium.ttf') format('truetype');
+    src: url('/fonts/GoogleSansDisplay-Medium.ttf');
     font-weight: 500;
     unicode-range: U+0041-005A, U+0061-007A, U+0030-0039;
   }
   @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
-    src: url('/fonts/SpoqaHanSansNeo-Thin.otf') format('opentype'),
-    url('/fonts/SpoqaHanSansNeo-Thin.ttf') format('truetype');
+    src: url('/fonts/SpoqaHanSansNeo-Thin.otf') ,
+    url('/fonts/SpoqaHanSansNeo-Thin.ttf');
     font-weight: 100;
 
     unicode-range: U+AC00-U+D7A3;
   } @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
-    src: url('/fonts/SpoqaHanSansNeo-Light.otf') format('opentype');
-  url('/fonts/SpoqaHanSansNeo-Light.ttf') format('truetype');
+    src: url('/fonts/SpoqaHanSansNeo-Light.otf'),
+  url('/fonts/SpoqaHanSansNeo-Light.ttf');
     font-weight: 300;
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
-    src: url('/fonts/SpoqaHanSansNeo-Regular.otf') format('opentype');
-  url('/fonts/SpoqaHanSansNeo-Regular.ttf') format('truetype');
+    src: url('/fonts/SpoqaHanSansNeo-Regular.otf') ,
+  url('/fonts/SpoqaHanSansNeo-Regular.ttf');
     font-weight: 400;
     unicode-range: U+AC00-U+D7A3;
 
   } @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
-    src: url('/fonts/SpoqaHanSansNeo-Medium.otf') format('opentype');
-  url('/fonts/SpoqaHanSansNeo-Medium.ttf') format('truetype');
+    src: url('/fonts/SpoqaHanSansNeo-Medium.otf') ,
+  url('/fonts/SpoqaHanSansNeo-Medium.ttf');
     font-weight: 500;
     font-display: swap;
     unicode-range: U+AC00-U+D7A3;
 
   }  @font-face {
     font-family: 'Spoqa Han Sans Neo', sans-serif;
-    src: url('/fonts/SpoqaHanSansNeo-Bold.otf') format('opentype');
-  url('/fonts/SpoqaHanSansNeo-Bold.ttf') format('truetype');
+    src: url('/fonts/SpoqaHanSansNeo-Bold.otf'),
+  url('/fonts/SpoqaHanSansNeo-Bold.ttf');
     font-weight: 700;
     font-display: swap;
     unicode-range: U+AC00-U+D7A3;
