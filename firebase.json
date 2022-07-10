@@ -1,31 +1,31 @@
 {
   "hosting": {
     "public": "dist",
-    "headers": [{
-      "source": "**",
-      "headers": [{
-        "key": "Access-Control-Allow-Origin",
-        "value": "*"
-      }, {
-        "key": "Access-Control-Allow-Credentials",
-        "value": "true"
-      }, {
-        "key": "Access-Control-Allow-Headers",
-        "value": "Access-Control-Allow-Origin, Access-Control-Allow-Credentials"
-      }]
-    }, {
-      "source": "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
-      "headers": [ {
-        "key": "Access-Control-Allow-Origin",
-        "value": "*"
-      } ]
-    },{
-      "source" : "index.html",
+    "headers": [ {
+      "source" : "**/*.@(eot|otf|ttf|ttc|woff|font.css)",
       "headers" : [ {
         "key" : "Access-Control-Allow-Origin",
         "value" : "*"
       } ]
-    }],
+    }, {
+      "source" : "**/*.@(js|css)",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=604800"
+      } ]
+    }, {
+      "source" : "**/*.@(jpg|jpeg|gif|png)",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=604800"
+      } ]
+    }, {
+      "source" : "404.html",
+      "headers" : [ {
+        "key" : "Cache-Control",
+        "value" : "max-age=300"
+      } ]
+    } ],
     "trailingSlash": false,
     "ignore": [
       "firebase.json",
