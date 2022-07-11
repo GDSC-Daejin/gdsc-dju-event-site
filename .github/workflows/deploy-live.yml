@@ -15,9 +15,8 @@ jobs:
       url: https://gdsc-dju-shared.web.app
     steps:
       - uses: actions/checkout@v2
+      - run: yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
       - run: yarn && yarn build
-      - uses: actions/checkout@v2
-      - run:  yarn add babel-cli babel-preset-es2015 babel-preset-react babel-register
       - run: yarn react-snap && babel-node sitemap-builder.js
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy

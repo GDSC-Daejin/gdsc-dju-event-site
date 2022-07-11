@@ -8,6 +8,8 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "release": "standard-version",
+    "postbuild": "react-snap && yarn sitemap",
+    "prebuild": "yarn sitemap",
     "sitemap": "babel-node sitemap-builder.js"
   },
   "reactSnap": {
