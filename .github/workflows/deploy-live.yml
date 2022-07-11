@@ -16,6 +16,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn && yarn build
+      - uses: actions/checkout@v2
+      - run: yarn react-snap && yarn sitemap
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:

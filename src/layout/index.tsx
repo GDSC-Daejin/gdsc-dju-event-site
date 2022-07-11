@@ -4,6 +4,7 @@ import { Route, Routes, useLocation } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { Footer } from '../components/Footer';
 import Navigation from '../components/Navigation';
+import ReactHead from '../components/ReactHead';
 import { useTheme } from '../hooks/ThemeHandler';
 import Contributors from '../pages/Contributors';
 import Events from '../pages/Events';
@@ -20,6 +21,7 @@ const Index = () => {
   return (
     <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
       <GlobalStyles />
+      <ReactHead />
       <Navigation theme={theme} toggleTheme={toggleTheme} />
       <NavigationBlock />
       <AnimatePresence>
