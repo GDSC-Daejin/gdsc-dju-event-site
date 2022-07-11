@@ -9,7 +9,7 @@
     "preview": "vite preview",
     "release": "standard-version",
     "postbuild": "react-snap && node sitemap-builder.js",
-    "sitemap": "babel-node sitemap-builder.js"
+    "sitemap": "node sitemap-builder.js"
   },
   "reactSnap": {
     "source": "./dist",
