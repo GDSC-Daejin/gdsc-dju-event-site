@@ -22,7 +22,6 @@
   "author": "JunHyeok <jhjeong00@gmail.com>",
   "bin": "./bin/react-vite-todo-boilerplate.js",
   "dependencies": {
-    "react-snap": "^1.23.0",
     "dayjs": "^1.11.3",
     "firebase": "^9.9.0",
     "firebase-tools": "^11.2.1",
@@ -56,6 +55,7 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
+    "react-snap": "^1.23.0",
     "prettier": "^2.5.1",
     "standard-version": "^9.5.0",
     "typescript": "^4.6.3",
