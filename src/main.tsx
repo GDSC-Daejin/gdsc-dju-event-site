@@ -1,13 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { BrowserRouter } from 'react-router-dom';
-
+import { hydrate, render } from 'react-dom';
 import App from './App';
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-);
+const rootElement = document.getElementById('root') as HTMLElement;
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
