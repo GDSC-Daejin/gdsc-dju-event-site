@@ -108,7 +108,7 @@ const GlobalStyles = createGlobalStyle`
     border: 0;
     font-size: 10px;
     vertical-align: baseline;
-    
+    list-style:none;
   }
   /* HTML5 display-role reset for older browsers */
   article, aside, details, figcaption, figure,

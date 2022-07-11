@@ -46,13 +46,14 @@ const Navigation: React.FC<{
           </StyledLogoWrapper>
           <LinkWrapper>
             {ROUTES.map((site, id) => (
-              <StyledLink
-                key={id}
-                isRoute={location.pathname == site.route}
-                to={site.route}
-              >
-                {site.title}
-              </StyledLink>
+              <li key={id}>
+                <StyledLink
+                  isRoute={location.pathname == site.route}
+                  to={site.route}
+                >
+                  {site.title}
+                </StyledLink>
+              </li>
             ))}
           </LinkWrapper>
         </NavTaskWrapper>

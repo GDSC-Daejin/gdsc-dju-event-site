@@ -36,7 +36,7 @@ export const GDSCImage = styled.img`
   margin: 0 8px;
 `;
 
-export const NavTask = styled.li<{ bold?: boolean; blue?: boolean }>`
+export const NavTask = styled.div<{ bold?: boolean; blue?: boolean }>`
   display: flex;
   align-items: center;
   cursor: pointer;
