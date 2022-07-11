@@ -25,7 +25,7 @@ const Index = () => {
       <Navigation theme={theme} toggleTheme={toggleTheme} />
       <NavigationBlock />
       <AnimatePresence>
-        <Routes key={location.pathname} location={location}>
+        <Routes key={location.pathname}>
           <Route path={'/*'} element={<Home />} />
           <Route path={'/events'} element={<Events />} />
           <Route path={'/faq'} element={<Faq />} />
