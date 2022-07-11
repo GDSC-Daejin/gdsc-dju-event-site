@@ -6,7 +6,7 @@ import { metaDatas } from '../../siteDatas/metaDatas';
 const ReactHead: React.FC = () => {
   const location = useLocation();
   const path = location.pathname;
-  const title = metaDatas[path as keyof typeof metaDatas].pathname;
+  const title = metaDatas[path as keyof typeof metaDatas].title;
   const description = metaDatas[path as keyof typeof metaDatas].description;
   return (
     <Helmet>
