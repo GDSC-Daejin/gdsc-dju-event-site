@@ -19,6 +19,8 @@ jobs:
       - uses: actions/checkout@v2
       - run: yarn && yarn build
       - uses: actions/checkout@v2
+      - run: yarn react-snap
+      - uses: actions/checkout@v2
       - run: node sitemap-builder.js
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
