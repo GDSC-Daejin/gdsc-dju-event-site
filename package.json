@@ -8,6 +8,7 @@
     "build": "tsc && vite build",
     "preview": "vite preview",
     "release": "standard-version",
+    "postbuild": "react-hydratable",
     "sitemap": "node sitemap-builder.js"
   },
   "reactSnap": {
@@ -37,9 +38,9 @@
     "zustand": "^4.0.0-rc.1"
   },
   "devDependencies": {
-    "@types/react-helmet": "^6.1.5",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "@types/react-helmet": "^6.1.5",
     "@types/react-router": "^5.1.17",
     "@types/react-router-dom": "^5.3.2",
     "@types/react-syntax-highlighter": "^15.5.2",
@@ -55,8 +56,9 @@
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
-    "react-snap": "^1.23.0",
     "prettier": "^2.5.1",
+    "react-hydratable": "^1.1.0",
+    "react-snap": "^1.23.0",
     "standard-version": "^9.5.0",
     "typescript": "^4.6.3",
     "vite": "^2.9.9"
