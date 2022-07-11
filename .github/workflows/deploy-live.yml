@@ -16,18 +16,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: yarn && yarn build
-      - name: Checkout the repo
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Generate the sitemap
-        id: sitemap
-        uses: cicirello/generate-sitemap@v1
-        with:
-          base-url-path: https://gdsc-dju-shared.web.app/
-          path-to-root: docs
-          include-pdf: false
-          sitemap-format: xml
       - uses: FirebaseExtended/action-hosting-deploy@v0
         id: run_firebase_deploy
         with:
