@@ -11,11 +11,15 @@ export const SessionCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+    height: 240px;
+  }
 `;
 
 export const SessionTitle = styled.h3`
   font-size: ${({ theme }) => theme.fontSize.h6};
   color: ${({ theme }) => theme.colors.grey900};
+  word-break: keep-all;
 `;
 export const SessionTime = styled.p`
   margin-top: 10px;

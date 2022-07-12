@@ -57,8 +57,8 @@ export const eventsData: EventsDataType = [
         position: userData.Jason.position,
       },
       {
-        title: '디자이너가 개발자 사이에서 살아남는 방법?',
-        time: '20:30 - 22:50',
+        title: '디자이너가 개발자 사이에서 살아남는 방법',
+        time: '20:30 - 20:50',
         profileImage: userData.Blaire.profileImage,
         name: userData.Blaire.name,
         position: userData.Blaire.position,

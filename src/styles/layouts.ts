@@ -5,10 +5,8 @@ export const StyledBody = styled.div`
   display: flex;
   flex-direction: column;
   flex: 1;
-  height: 100vh;
+  min-height: calc(100vh - 70px);
   padding-top: 70px;
-  padding-bottom: 200px;
-  position: relative;
 `;
 export const LayoutContainer = styled(motion.div)`
   position: relative;
@@ -21,11 +19,21 @@ export const LayoutContainer = styled(motion.div)`
 `;
 export const ContainerInner = styled(motion.div)`
   width: 92%;
-  height: 100%;
   max-width: calc(100% - 48px);
   margin: 0 auto;
   padding: 0 20px;
 `;
-export const NavigationBlock = styled.div`
-  height: 70px;
+export const Title = styled.h1`
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  color: ${({ theme }) => theme.colors.grey900};
+  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+    font-size: ${(props) => props.theme.fontSize.h2};
+  }
+`;
+export const Paragraph = styled.p`
+  font-size: ${({ theme }) => theme.fontSize.h1};
+  color: ${({ theme }) => theme.colors.grey600};
+  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+    font-size: ${(props) => props.theme.fontSize.body2};
+  }
 `;

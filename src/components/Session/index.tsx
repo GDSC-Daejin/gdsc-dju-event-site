@@ -82,7 +82,9 @@ const Session: React.FC<SessionEventType> = ({
               <EventTitle>{title}</EventTitle>
               <EventDescription>{description}</EventDescription>
               <EventDateWrapper>
-                <EventDate>{eventDateFilter(start, end)}</EventDate>
+                <EventDate type={'session'}>
+                  {eventDateFilter(start, end)}
+                </EventDate>
                 <StyledSectionBar />
                 <EventTime>{eventTimeFilter(start, end)}</EventTime>
               </EventDateWrapper>

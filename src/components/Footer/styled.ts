@@ -9,23 +9,13 @@ export const Footer = styled.footer`
   box-sizing: border-box;
 `;
 
-export const FooterContent = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-`;
-
 export const FooterText = styled.a<{ google?: boolean }>`
   font-size: ${(props) => props.theme.fontSize.body2};
   font-weight: 600;
-  margin-right: 20px;
   color: ${(props) => props.theme.colors.grey600};
   cursor: pointer;
   white-space: nowrap;
-  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
-    margin-top: 10px;
-  }
+  margin: 0;
   ${(props) =>
     props.google &&
     css`
@@ -37,11 +27,12 @@ export const FooterText = styled.a<{ google?: boolean }>`
 
 export const FooterCopyRight = styled.span`
   display: inline-block;
-  position: relative;
-
+  position: absolute;
   font-size: ${(props) => props.theme.fontSize.body3};
   color: ${(props) => props.theme.colors.grey600};
   white-space: nowrap;
+  bottom: 20px;
+  right: 20px;
   @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
     font-size: ${(props) => props.theme.fontSize.body4};
   }
@@ -52,42 +43,29 @@ export const FooterWrapper = styled.footer<{ disable: boolean }>`
     css`
       display: none;
     `}
-  height: 200px;
-  transform: translateY(calc(100% + 70px));
-  position: absolute;
-  left: 0;
-  bottom: 0;
   display: flex;
   padding: 30px 40px;
   justify-content: space-between;
   width: 100vw;
   box-sizing: border-box;
-  align-items: flex-end;
+  align-items: center;
   background-color: rgba(0, 0, 0, 0.01);
   backdrop-filter: blur(10px);
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     padding: 30px 20px;
+    align-items: center;
   }
 `;
 export const FooterLogo = styled.div`
   display: flex;
   align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
+  gap: 10px;
+  height: min-content;
   @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
-    height: 100%;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-  }
-`;
-export const FooterLogoWrapper = styled.div`
-  margin-right: 20px;
-`;
-export const FooterGDSCLogo = styled.img`
-  height: 30px;
-
-  padding-right: 5px;
-  @media (max-width: 500px) {
-    height: 30px;
   }
 `;

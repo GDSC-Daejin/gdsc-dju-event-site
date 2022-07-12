@@ -6,16 +6,16 @@ import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
 import CalendarButton, { EventButton } from '../Button';
 import {
-  EventButtonWrapper,
+  EventApplyWrapper,
   EventDate,
   EventDateWrapper,
   EventDescription,
   EventInfoWrapper,
   EventTime,
   EventTitle,
-  EventWrapper,
-  StyledSectionBar,
-} from './styled';
+  SessionHeader,
+} from '../Session/styled';
+import { StyledSectionBar } from './styled';
 
 const Event: React.FC<EventType> = ({
   title,
@@ -27,17 +27,19 @@ const Event: React.FC<EventType> = ({
   return (
     <LayoutContainer>
       <ContainerInner>
-        <EventWrapper>
+        <SessionHeader>
           <EventInfoWrapper>
             <EventTitle>{title}</EventTitle>
             <EventDescription>{description}</EventDescription>
             <EventDateWrapper>
-              <EventDate>{eventDateFilter(start, end)}</EventDate>
+              <EventDate type={'event'}>
+                {eventDateFilter(start, end)}
+              </EventDate>
               <StyledSectionBar />
               <EventTime>{eventTimeFilter(start, end)}</EventTime>
             </EventDateWrapper>
           </EventInfoWrapper>
-          <EventButtonWrapper>
+          <EventApplyWrapper>
             <EventButton
               isEnd={checkEventEnd(end)}
               color={'googleGreen'}
@@ -68,8 +70,8 @@ const Event: React.FC<EventType> = ({
             >
               구글 캘린더에 추가하기
             </CalendarButton>
-          </EventButtonWrapper>
-        </EventWrapper>
+          </EventApplyWrapper>
+        </SessionHeader>
       </ContainerInner>
     </LayoutContainer>
   );

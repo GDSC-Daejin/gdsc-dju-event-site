@@ -1,14 +1,11 @@
 import styled, { css } from 'styled-components';
+import { StyledBody } from '../styles/layouts';
 
-export const EventLayoutWrapper = styled.div`
+export const EventLayoutWrapper = styled(StyledBody)`
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
 `;
-export const EventPageTitle = styled.h1`
-  font-size: ${({ theme }) => theme.fontSize.h1};
-  color: ${({ theme }) => theme.colors.grey900};
-`;
+
 export const EventsWrapper = styled.div`
   display: flex;
   flex-direction: column;
@@ -25,4 +22,7 @@ export const EventContour = styled.div<{ last: boolean }>`
     css`
       background: transparent;
     `}
+`;
+export const EventSection = styled.section`
+  margin-top: 50px;
 `;

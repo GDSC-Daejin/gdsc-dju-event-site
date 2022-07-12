@@ -2,12 +2,12 @@ import React from 'react';
 import Event from '../components/Event';
 import Session from '../components/Session';
 import { eventsData } from '../siteDatas/eventsData';
-import { ContainerInner, LayoutContainer } from '../styles/layouts';
+import { ContainerInner, LayoutContainer, Title } from '../styles/layouts';
 
 import {
   EventContour,
   EventLayoutWrapper,
-  EventPageTitle,
+  EventSection,
   EventsWrapper,
 } from './events.styled';
 
@@ -16,15 +16,21 @@ const EventsLayout = () => {
     <EventLayoutWrapper>
       <LayoutContainer>
         <ContainerInner>
-          <EventPageTitle>Events</EventPageTitle>
+          <Title>Events</Title>
         </ContainerInner>
       </LayoutContainer>
-      {eventsData.map((data, id) => (
-        <EventsWrapper key={id}>
-          {data.type == 'session' ? <Session {...data} /> : <Event {...data} />}
-          <EventContour last={id === eventsData.length - 1} />
-        </EventsWrapper>
-      ))}
+      <EventSection>
+        {eventsData.map((data, id) => (
+          <EventsWrapper key={id}>
+            {data.type == 'session' ? (
+              <Session {...data} />
+            ) : (
+              <Event {...data} />
+            )}
+            <EventContour last={id === eventsData.length - 1} />
+          </EventsWrapper>
+        ))}
+      </EventSection>
     </EventLayoutWrapper>
   );
 };

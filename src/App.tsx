@@ -5,7 +5,7 @@ import Navigation from './components/Navigation';
 import { useTheme } from './hooks/ThemeHandler';
 import Layout from './layout';
 import GlobalStyles from './styles/globalStyles';
-import { NavigationBlock, StyledBody } from './styles/layouts';
+import { StyledBody } from './styles/layouts';
 import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {

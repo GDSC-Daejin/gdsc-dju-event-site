@@ -1,6 +1,6 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import calendarIcon from '../../assets/icons/calendar.svg';
+import Calendar from '../../assets/icons/Calendar';
 import { lightColors } from '../../styles/lightColors';
 
 export const CalendarButtonStyle = styled.button<{ isEnd: boolean }>`
@@ -11,19 +11,22 @@ export const CalendarButtonStyle = styled.button<{ isEnd: boolean }>`
   border: 0 solid transparent;
   border-radius: 10px;
   display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
   align-items: center;
   cursor: pointer;
+  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+    font-size: ${(props) => props.theme.fontSize.body2};
+    padding: 14px 20px;
+  }
   ${({ isEnd }) =>
     isEnd &&
     css`
       cursor: not-allowed;
-      color: ${({ theme }) => theme.colors.grey200};
+      color: ${({ theme }) => theme.colors.grey300};
     `}
 `;
-export const CalendarImage = styled.img`
-  margin-right: 10px;
-  height: 20px;
-`;
+
 export const EventButton = styled.button<{
   color?: keyof typeof lightColors;
   isEnd: boolean;
@@ -35,6 +38,10 @@ export const EventButton = styled.button<{
   border-radius: 10px;
   background: ${({ theme }) => theme.colors.googleBlue};
   cursor: pointer;
+  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+    font-size: ${(props) => props.theme.fontSize.body2};
+    padding: 14px 20px;
+  }
   ${({ color }) =>
     color &&
     css`
@@ -54,7 +61,7 @@ const CalendarButton: React.FC<{
 }> = ({ children, onClick, isEnd }) => {
   return (
     <CalendarButtonStyle onClick={onClick} isEnd={isEnd}>
-      <CalendarImage src={calendarIcon} />
+      <Calendar isActive={!isEnd} />
       {children}
     </CalendarButtonStyle>
   );
