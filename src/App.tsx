@@ -1,19 +1,24 @@
 import React from 'react';
+import { ThemeProvider } from 'styled-components';
+import { Footer } from './components/Footer';
+import Navigation from './components/Navigation';
 import { useTheme } from './hooks/ThemeHandler';
 import Layout from './layout';
+import GlobalStyles from './styles/globalStyles';
+import { NavigationBlock, StyledBody } from './styles/layouts';
+import { darkTheme, lightTheme } from './styles/theme';
 
 function App() {
+  const { theme, toggleTheme } = useTheme();
   return (
-    <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        flex: '1 0 auto',
-        minHeight: '100vh',
-      }}
-    >
-      <Layout />
-    </div>
+    <ThemeProvider theme={theme === 'light' ? lightTheme : darkTheme}>
+      <GlobalStyles />
+      <Navigation theme={theme} toggleTheme={toggleTheme} />
+      <StyledBody>
+        <Layout />
+      </StyledBody>
+      <Footer />
+    </ThemeProvider>
   );
 }
 

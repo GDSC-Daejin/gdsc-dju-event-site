@@ -46,14 +46,18 @@ export const FooterCopyRight = styled.span`
     font-size: ${(props) => props.theme.fontSize.body4};
   }
 `;
-export const FooterWrapper = styled.div<{ disable: boolean }>`
+export const FooterWrapper = styled.footer<{ disable: boolean }>`
   ${({ disable }) =>
     disable &&
     css`
       display: none;
     `}
-  display: flex;
+  height: 200px;
+  transform: translateY(calc(100% + 70px));
+  position: absolute;
+  left: 0;
   bottom: 0;
+  display: flex;
   padding: 30px 40px;
   justify-content: space-between;
   width: 100vw;

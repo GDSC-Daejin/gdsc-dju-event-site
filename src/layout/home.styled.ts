@@ -6,9 +6,12 @@ export const HomeTitle = styled.h1`
   font-size: ${({ theme }) => theme.fontSize.h1};
   color: ${({ theme }) => theme.colors.grey800};
   white-space: pre-line;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.h2};
+  }
 `;
 export const HomeLayoutWrapper = styled(motion.main)`
-  margin-top: 260px;
+  margin-top: 30%;
   display: flex;
   flex-direction: column;
 `;
@@ -17,11 +20,17 @@ export const StyledDate = styled.span`
   color: ${({ theme }) => theme.colors.grey600};
   font-weight: bold;
   margin-top: 40px;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.h7};
+  }
 `;
 export const StyledTime = styled.span`
   font-size: ${({ theme }) => theme.fontSize.h6};
   color: ${({ theme }) => theme.colors.grey500};
   margin-top: 6px;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.body1};
+  }
 `;
 export const ButtonWrapper = styled.div`
   display: flex;

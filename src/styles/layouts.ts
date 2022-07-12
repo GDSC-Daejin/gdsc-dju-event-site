@@ -1,8 +1,15 @@
 import { motion } from 'framer-motion';
 import styled from 'styled-components';
 
-//보통 웹사이트에서 사용하는 Container 사이즈입니다.
-
+export const StyledBody = styled.div`
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  height: 100vh;
+  padding-top: 70px;
+  padding-bottom: 200px;
+  position: relative;
+`;
 export const LayoutContainer = styled(motion.div)`
   position: relative;
   width: 100%;

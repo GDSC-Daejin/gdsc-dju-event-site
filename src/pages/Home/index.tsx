@@ -10,6 +10,7 @@ export const HomeBackground = styled(motion.img)`
   position: absolute;
   right: 0;
   bottom: 0;
+  z-index: -1;
 `;
 
 const Home = () => {
@@ -25,15 +26,15 @@ const Home = () => {
         >
           <HomeLayout />
         </ContainerInner>
+        <HomeBackground
+          src={sessionBackground}
+          initial="start"
+          animate="end"
+          exit="out"
+          variants={pageTransitionAnimate}
+          transition={pageAnimate}
+        />
       </LayoutContainer>
-      <HomeBackground
-        src={sessionBackground}
-        initial="start"
-        animate="end"
-        exit="out"
-        variants={pageTransitionAnimate}
-        transition={pageAnimate}
-      />
     </>
   );
 };
