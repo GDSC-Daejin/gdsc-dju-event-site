@@ -26,15 +26,15 @@ const Home = () => {
         >
           <HomeLayout />
         </ContainerInner>
-        <HomeBackground
-          src={sessionBackground}
-          initial="start"
-          animate="end"
-          exit="out"
-          variants={pageTransitionAnimate}
-          transition={pageAnimate}
-        />
       </LayoutContainer>
+      <HomeBackground
+        src={sessionBackground}
+        initial="start"
+        animate="end"
+        exit="out"
+        variants={pageTransitionAnimate}
+        transition={pageAnimate}
+      />
     </>
   );
 };
