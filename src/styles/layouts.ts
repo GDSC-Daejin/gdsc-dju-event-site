@@ -31,7 +31,7 @@ export const Title = styled.h1`
   }
 `;
 export const Paragraph = styled.p`
-  font-size: ${({ theme }) => theme.fontSize.h1};
+  font-size: ${(props) => props.theme.fontSize.body1};
   color: ${({ theme }) => theme.colors.grey600};
   @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
     font-size: ${(props) => props.theme.fontSize.body2};
