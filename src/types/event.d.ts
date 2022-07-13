@@ -1,16 +1,17 @@
 export type EventsType = 'event' | 'session';
 
-export interface EventType {
+export interface DefaultEventType {
   title: string;
   description: string;
   start: string;
   end: string;
   applyLink: string;
-  type: EventsType;
 }
-export interface SessionEventType extends EventType {
-  sessions?: SessionType[];
+
+export interface EventType extends DefaultEventType {
+  type: 'event';
 }
+
 export interface SessionType {
   title: string;
   time: string;
@@ -18,4 +19,10 @@ export interface SessionType {
   name: string;
   position: string;
 }
-export type EventsDataType = SessionEventType[];
+
+export interface SessionEventType extends DefaultEventType {
+  sessions: SessionType[];
+  type: 'session';
+}
+
+export type EventsDataType = (SessionEventType | EventType)[];
