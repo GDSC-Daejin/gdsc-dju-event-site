@@ -65,8 +65,11 @@ export const NavTask = styled.div<{ bold?: boolean; blue?: boolean }>`
 `;
 export const LinkWrapper = styled.ul`
   margin-left: 20px;
-  display: flex;
+  display: none;
   flex-direction: row;
+  @media (min-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    display: flex;
+  } ;
 `;
 
 export const StyledLink = styled(Link)<{ isRoute?: boolean }>`

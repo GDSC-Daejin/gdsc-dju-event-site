@@ -2,6 +2,8 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import gdsclogo from '../../assets/GDSCLogo.svg';
 import { ThemeType } from '../../hooks/ThemeHandler';
+import MenuIcon from '../MenuIcon';
+import MobileMenu from '../MobileMenu';
 import ThemeToggleButton from '../ThemeToggleButton';
 import {
   GDSCImage,
@@ -58,7 +60,9 @@ const Navigation: React.FC<{
           </LinkWrapper>
         </NavTaskWrapper>
         <ThemeToggleButton theme={theme} toggleButton={toggleTheme} />
+        <MenuIcon />
       </NavInner>
+      <MobileMenu />
     </NavWrapper>
   );
 };

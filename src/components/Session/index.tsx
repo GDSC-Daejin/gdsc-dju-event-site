@@ -4,7 +4,8 @@ import { SessionEventType } from '../../types/event';
 import { checkEventEnd } from '../../utils/checkEventEnd';
 import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
-import CalendarButton, { EventButton } from '../Button';
+import CalendarButton, { EventButton } from '../common/Button';
+
 import { StyledSectionBar } from '../Event/styled';
 import SessionCard from '../SessionCard';
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
-import Calendar from '../../assets/icons/Calendar';
-import { lightColors } from '../../styles/lightColors';
+import Calendar from '../../../assets/icons/Calendar';
+import { lightColors } from '../../../styles/lightColors';
 
 export const CalendarButtonStyle = styled.button<{ isEnd: boolean }>`
   padding: 16px 30px;

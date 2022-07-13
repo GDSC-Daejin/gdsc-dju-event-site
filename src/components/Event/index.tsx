@@ -4,7 +4,9 @@ import { EventType } from '../../types/event';
 import { checkEventEnd } from '../../utils/checkEventEnd';
 import { google } from '../../utils/createGoogleCalendarLink';
 import { eventDateFilter, eventTimeFilter } from '../../utils/eventDateFilter';
-import CalendarButton, { EventButton } from '../Button';
+import CalendarButton from '../common/Button';
+import { EventButton } from '../common/Button';
+
 import {
   EventApplyWrapper,
   EventDate,

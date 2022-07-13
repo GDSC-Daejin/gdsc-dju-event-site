@@ -38,3 +38,17 @@ export const contributorAnimate = {
     },
   },
 };
+export const sidebar = {
+  open: {
+    x: '100vw',
+    transition: {
+      duration: 0.5,
+    },
+  },
+  closed: {
+    x: '-100vw',
+    transition: {
+      duration: 0.5,
+    },
+  },
+};

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import DarkModeIcon from '../../assets/icons/darkModeIcon';
 import LightModeIcon from '../../assets/icons/lightModeIcon';
-import { ThemeType, useTheme } from '../../hooks/ThemeHandler';
+import { ThemeType } from '../../hooks/ThemeHandler';
 
 const ThemeButton = styled.button`
   padding: 7px;

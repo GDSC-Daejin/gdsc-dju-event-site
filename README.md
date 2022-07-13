@@ -54,7 +54,7 @@ or
 │   │   └── Home
 │   │       └── index.tsx
 │   ├── store // 상태를 저장하는 폴더입니다.
-│   │   └── todoStore.ts
+│   │   └── menuStore.ts
 │   ├── styles // 스타일을 저장하는 폴더입니다.
 │   │   ├── declare.ts //커스텀 스타일을 사용하기 위한 파일입니다.
 │   │   ├── fontSize.ts // 폰트 크기를 저장하는 파일입니다.
