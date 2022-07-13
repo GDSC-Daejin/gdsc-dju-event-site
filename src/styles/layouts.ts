@@ -15,6 +15,7 @@ export const LayoutContainer = styled(motion.div)`
   max-width: 1200px;
   margin: 0 auto;
   min-width: 320px;
+  overflow-x: hidden;
   flex: 1;
 `;
 export const ContainerInner = styled(motion.div)`

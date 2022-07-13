@@ -40,7 +40,7 @@ export const StyledLink = styled(motion.div)<{ isRoute?: boolean }>`
   padding: 10px 15px;
   border-radius: 8px;
   border-bottom: 1px solid ${({ theme }) => theme.colors.grey200};
-  font-size: ${({ theme }) => theme.fontSize.body2};
+  font-size: ${({ theme }) => theme.fontSize.body1};
   color: ${({ theme }) => theme.colors.grey900};
   margin-bottom: 10px;
   ${({ isRoute }) =>

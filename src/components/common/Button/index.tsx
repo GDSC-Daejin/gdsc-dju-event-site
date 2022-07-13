@@ -15,9 +15,12 @@ export const CalendarButtonStyle = styled.button<{ isEnd: boolean }>`
   gap: 4px;
   align-items: center;
   cursor: pointer;
-  @media (max-width: ${(props) => props.theme.windowSize.mobile}px) {
+  @media (max-width: ${(props) => props.theme.windowSize.tablet}px) {
     font-size: ${(props) => props.theme.fontSize.body2};
     padding: 14px 20px;
+  }
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSize.body3};
   }
   ${({ isEnd }) =>
     isEnd &&

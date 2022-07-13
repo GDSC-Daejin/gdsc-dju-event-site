@@ -9,6 +9,9 @@ export const HomeTitle = styled.h1`
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     font-size: ${({ theme }) => theme.fontSize.h2};
   }
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSize.h3};
+  }
 `;
 export const HomeLayoutWrapper = styled(motion.main)`
   margin-top: 30%;
@@ -22,6 +25,9 @@ export const StyledDate = styled.span`
   margin-top: 40px;
   @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
     font-size: ${({ theme }) => theme.fontSize.h7};
+  }
+  @media (max-width: ${({ theme }) => theme.windowSize.mobile}px) {
+    font-size: ${({ theme }) => theme.fontSize.body1};
   }
 `;
 export const StyledTime = styled.span`
@@ -51,6 +57,9 @@ export const StyledButton = styled.button<{
   border: 0 solid transparent;
   border-radius: 10px;
   cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.body2};
+  }
   ${({ eventType }) =>
     eventType === 'session'
       ? css`
@@ -73,4 +82,7 @@ export const StyledMoreButton = styled.button`
   padding: 16px 36px;
   border: 0 solid transparent;
   cursor: pointer;
+  @media (max-width: ${({ theme }) => theme.windowSize.tablet}px) {
+    font-size: ${({ theme }) => theme.fontSize.body2};
+  }
 `;

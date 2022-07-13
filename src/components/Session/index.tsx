@@ -98,7 +98,7 @@ const Session: React.FC<SessionEventType> = ({
                 }
                 isEnd={checkEventEnd(end)}
               >
-                {checkEventEnd(end) ? '종료된 세션이에요' : '세션 신청하기'}
+                {checkEventEnd(end) ? '종료된 세션' : '세션 신청하기'}
               </EventButton>
               <CalendarButton
                 isEnd={checkEventEnd(end)}

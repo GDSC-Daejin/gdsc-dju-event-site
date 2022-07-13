@@ -25,10 +25,6 @@ export const ROUTES = [
     route: '/contributors',
     title: 'Contributors',
   },
-  // {
-  //   route: '/faq',
-  //   title: 'FAQ',
-  // },
 ];
 const Navigation: React.FC<{
   theme: ThemeType | undefined;
